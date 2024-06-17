@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "npx eslint .",
     "format": "prettier --write ./**/*.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
