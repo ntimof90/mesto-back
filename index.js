@@ -2,9 +2,10 @@ const express = require('express');
 
 const { default: mongoose } = require('mongoose');
 
-const bodyParser = require('body-parser');
 
 const { errors } = require('celebrate');
+
+const cors = require('cors');
 
 const errorHandler = require('./middlewares/error-handler');
 
@@ -22,7 +23,11 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 
 server.listen(PORT);
 
-server.use(bodyParser.json());
+server.use(cors({
+  origin: 'http://localhost:3000'
+}));
+
+server.use(express.json());
 
 server.use(logger);
 
