@@ -107,3 +107,13 @@ exports.updateAvatar = async (req, res, next) => {
     return next(e);
   }
 };
+
+exports.getMe = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.me._id);
+    if (!user) throw createHttpError(...errors.unfoundUser);
+    return res.status(200).json(user);
+  } catch (e) {
+    return next(e);
+  }
+};

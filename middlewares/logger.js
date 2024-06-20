@@ -4,7 +4,7 @@ const expressWinston = require('express-winston');
 
 module.exports = {
   logger: expressWinston.logger({
-    transports: [new winston.transports.File({ filename: 'request.log ' })],
+    transports: [new winston.transports.File({ filename: 'request.log' })],
     format: winston.format.json(),
   }),
   errorLogger: expressWinston.errorLogger({
