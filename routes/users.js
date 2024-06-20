@@ -16,9 +16,9 @@ router.use(auth);
 
 router.get('/', getUsers);
 
-router.get('/:id', validator.getUserById, getUserById);
-
 router.get('/me', getMe);
+
+router.get('/:id', validator.getUserById, getUserById);
 
 router.patch('/me', validator.updateProfile, updateProfile);
 
